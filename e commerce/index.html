@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameStore - Your Ultimate Gaming Destination</title>
+  <style>
+    body {
+        background-image: url(bg.jpg);
+        background-position: center;
+        background-size: cover;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      color: #ffd000;
+    }
+
+    h2 {
+      font-family:'Courier New', Courier, monospace;
+      color: white;
+    }
+
+    #products {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      border: 3px solid #ffffff;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 15px;
+      background-color: #ffffff00;
+      text-align: center;
+      text
+    }
+
+    img {
+        width: 200px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+    }
+
+    #cart {
+        color: #fff;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin: 5px 0;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>GameStore - Your Ultimate Gaming Destination</h1>
+  
+  <div id="products">
+    <div class="product" data-id="1" data-name="Efootball 2024" data-price="3999.00">
+      <img src="Efootball.jpg" alt="Efootball 2024">
+      <h2>Efootball 2024</h2>
+      <p>Price: &#x20B9;3,999.00</p>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-id="2" data-name="GTA 6" data-price="4999.00">
+      <img src="GTA5.jpg" alt="GTA 6">
+      <h2>GTA 6</h2>
+      <p>Price: &#x20B9;4,999.00</p>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-id="3" data-name="FIFA 24" data-price="599.00">
+      <img src="fifa_24.jpg" alt="FIFA 22">
+      <h2>FIFA 24</h2>
+      <p>Price: &#x20B9;599.00</p>
+      <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-id="4" data-name="APEX LEGENDS" data-price="699.00">
+        <img src="apx.jpg" alt="APEX LEGENDS">
+        <h2>APEX LEGENDS</h2>
+        <p>Price: &#x20B9;699.00</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+      <div class="product" data-id="5" data-name="FALL GUYS" data-price="799.00">
+        <img src="flgy.jpg" alt="">
+        <h2>FALL GUYS</h2>
+        <p>Price: &#x20B9;799.00</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+      <div class="product" data-id="6" data-name="VALORANT" data-price="899.00">
+        <img src="vlrt.jpg" alt="FIFA 22">
+        <h2>VALORANT</h2>
+        <p>Price: &#x20B9;899.00</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+      <div class="product" data-id="7" data-name="FARLIGHT 84" data-price="999.00">
+        <img src="f84.jpg" alt="FIFA 22">
+        <h2>FARLIGHT 84</h2>
+        <p>Price: &#x20B9;999.00</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+  </div>
+
+  <h1>Shopping Cart</h1>
+
+  <div id="cart">
+    <ul id="cart-items">
+    </ul>
+    <p>Total: &#x20B9;<span id="total">0.00</span></p>
+    <a href="billing.html">Proceed to Billing</a>
+  </div>
+
+  <script>
+    function addToCart(button) {
+      const product = button.parentElement;
+      const cartItems = document.getElementById('cart-items');
+      const totalElement = document.getElementById('total');
+
+      const itemId = product.getAttribute('data-id');
+      const itemName = product.getAttribute('data-name');
+      const itemPrice = parseFloat(product.getAttribute('data-price'));
+
+      const li = document.createElement('li');
+      li.textContent = `${itemName} - ₹${itemPrice.toFixed(2)}`;
+      cartItems.appendChild(li);
+      const currentTotal = parseFloat(totalElement.textContent);
+      totalElement.textContent = (currentTotal + itemPrice).toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

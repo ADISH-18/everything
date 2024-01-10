@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylized Resume</title>
+    <style>
+        body {
+            font-family:inherit;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+            border: 20px solid #333; /* Border around the whole page */
+        }
+        #resume {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+        #left-section {
+            text-align: center;
+            flex: 1;
+        }
+        #right-section {
+            flex: 2;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        header h1 {
+            color: #333;
+            margin: 0;
+        }
+        header p {
+            color: #777;
+            margin: 5px 0;
+        }
+        img {
+            border-radius: 10px; /* Make the image square and add border-radius */
+            width: 250px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            margin-bottom: 20px; /* Additional margin below the profile picture */
+        }
+        .section-title {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+        }
+        .section-content {
+            padding: 20px;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="resume">
+        <div id="left-section">
+            <header>
+                <img src="pfp.jpg" alt="Your Profile Picture">
+                <h1>DRISHTADHYUMNAN</h1>
+                <p>Engineer</p>
+            </header>
+            <section>
+                <h2 class="section-title">Contact Information</h2>
+                <div class="section-content">
+                    <p>Email: DRISHTU@example.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>LinkedIn: linkedin.com/in/DHRISHTADHYUMNAN</p>
+                    <p>GitHub: github.com/SORCERER</p>
+                </div>
+            </section>
+        </div>
+        <div id="right-section">
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    <h3>BABLOO University</h3>
+                    <p>Bachelor of Technology in Computer Engineering</p>
+                    <p>Graduation Year: 2024</p>
+                    <p>Relevant Coursework: Data Structures, Algorithms, Software Engineering</p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="section-content">
+                    <h3>Software Developer - AMBAL Company</h3>
+                    <p>Worked on projects involving web development and database management.</p>
+                    <p>Duration: January 2022 - Present</p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-content">
+                    <div class="project">
+                        <h3>Game Development Project - "Galactic Conquest: Space Explorer"</h3>
+                        <p>Description: Developed "Galactic Conquest: Space Explorer," an engaging open-world space exploration game. Led the design and implementation of an intricate galaxy, featuring diverse planets, alien civilizations, and intense space battles. Implemented customizable spaceships, resource management mechanics, and a dynamic storyline. Delivered a unique gaming experience that combines exploration, diplomacy, and strategic combat.</p>
+                        <p>Tools/Languages Used: HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="project">
+                        <h3>INVENTITRACK: AGILE PROJECT MANAGER SOFTWARE</h3>
+                        <p>Description: Led the development of "InventiTrack," an agile project management software. Designed and implemented features for task tracking, team collaboration, and progress visualization. Integrated customizable workflows and reporting tools to enhance project efficiency. Successfully delivered a user-friendly solution, optimizing team productivity and project delivery</p>
+                        <p>Tools/Languages Used: Python, Django</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Skills</h2>
+                <div class="section-content">
+                    <p>Programming Languages: C++, Java, Python</p>
+                    <p>Web Development: HTML, CSS, JavaScript</p>
+                    <p>Database Management: MySQL, SQLite</p>
+                    <p>Version Control: Git</p>
+                    <p>Problem Solving and Algorithms</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Optional: You can use JavaScript to dynamically update content if needed.
+    </script>
+
+</body>
+</html>
