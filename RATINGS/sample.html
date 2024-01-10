@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="feedbackApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget E-commerce Feedback Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            background-image: url('bg2.avif');
+          background-size:cover;
+          background-color: #ffffff86;
+          font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            color: orangered;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            color: black;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            color: #45a049;
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            resize: vertical;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .rating {
+            color: orangered;
+            margin-bottom: 15px;
+        }
+
+        .suggestion-box {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div ng-controller="FeedbackController">
+        <form ng-submit="submitFeedback()" novalidate>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" ng-model="feedback.name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" ng-model="feedback.email" required>
+
+            <div class="rating">
+                <label for="performanceRating">Performance Rating:</label>
+                <select id="performanceRating" name="performanceRating" ng-model="feedback.performanceRating" required>
+                    <option ng-repeat="rating in ratings" value="{{rating}}">{{rating}}</option>
+                </select>
+            </div>
+
+            <div class="rating">
+                <label for="featuresRating">Features Rating:</label>
+                <select id="featuresRating" name="featuresRating" ng-model="feedback.featuresRating" required>
+                    <option ng-repeat="rating in ratings" value="{{rating}}">{{rating}}</option>
+                </select>
+            </div>
+
+            <div class="rating">
+                <label for="overallRating">Overall Product Rating:</label>
+                <select id="overallRating" name="overallRating" ng-model="feedback.overallRating" required>
+                    <option ng-repeat="rating in ratings" value="{{rating}}">{{rating}}</option>
+                </select>
+            </div>
+
+            <div class="suggestion-box">
+                <label for="suggestion">Additional Comments:</label>
+                <textarea id="suggestion" name="suggestion" ng-model="feedback.suggestion"></textarea>
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+    <script>
+        var app = angular.module('feedbackApp', []);
+        app.controller('FeedbackController', function ($scope, $window) {
+            $scope.feedback = {};
+
+            $scope.ratings = [1, 2, 3, 4, 5];
+
+            $scope.submitFeedback = function () {
+                // Add your logic to handle the submission (e.g., sending data to a server)
+                // For demonstration purposes, just logging the feedback object to the console
+                console.log($scope.feedback);
+
+                // Redirect to the thank you page
+                $window.location.href = 'ty.html';
+            };
+        });
+    </script>
+
+</body>
+
+</html>
